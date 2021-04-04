@@ -1,16 +1,13 @@
 package com.explore.microservices.repo;
 
-import java.util.List;
-
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.explore.microservices.domain.Tour;
-
-@Repository
+	
+@RepositoryRestResource
 public interface TourRepo extends CrudRepository<Tour, Integer>{
 
-	List<Tour> findByTourPackageCode(String code);
+	Tour findByTourPackageCode(String code);
 	
 }
